@@ -58,6 +58,6 @@ steps:
     waitFor: [ "graalvm17-build" ]
 images:
 #  - gcr.io/$PROJECT_ID/graalvm:${_GRAALVM_VERSION}
-  - gcr.io/mpeddada-test/graalvmtestbuild:${_GRAALVM_VERSION}
+  - gcr.io/$PROJECT_ID/graalvmtestbuild:${_GRAALVM_VERSION}
 #  - gcr.io/$PROJECT_ID/graalvm17:${_GRAALVM_VERSION}
 #  - gcr.io/cloud-devrel-public-resources/graalvm17:${_GRAALVM_VERSION}
