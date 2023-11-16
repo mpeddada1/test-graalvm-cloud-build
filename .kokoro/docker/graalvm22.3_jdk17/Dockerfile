@@ -14,7 +14,7 @@
 
 ARG GRAALVM_VERSION
 
-FROM ghcr.io/graalvm/graalvm-ce:ol7-java17-$GRAALVM_VERSION-b1
+FROM ghcr.io/graalvm/graalvm-ce:ol7-java17-22.3.3-b1
 
 RUN gu install native-image && \
     yum update -y && \
