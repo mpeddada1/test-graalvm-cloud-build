@@ -20,7 +20,7 @@ substitutions:
 steps:
   # GraalVM A build
   - name: gcr.io/cloud-builders/docker
-    args: ["build", "-t", "gcr.io/mpeddada-test/graalvm_a:${_JAVA_SHARED_CONFIG_VERSION}", "--file", "${_GRAALVM_A}/Dockerfile", "."]
+    args: ["build", "-t", "gcr.io/mpeddada-test/graalvm_a:${_JAVA_SHARED_CONFIG_VERSION}", "-t", "gcr.io/mpeddada-test/graalvm_a:infra-$SHORT_SHA", "--file", "${_GRAALVM_A}/Dockerfile", "."]
     dir: .kokoro/docker
     id: graalvm-a-build
     waitFor: ["-"]
@@ -32,3 +32,4 @@ steps:
 
 images:
   - gcr.io/mpeddada-test/graalvm_a:${_JAVA_SHARED_CONFIG_VERSION}
+  - gcr.io/mpeddada-test/graalvm_a:$SHORT_SHA
